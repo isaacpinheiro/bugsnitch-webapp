@@ -1,1 +1,133 @@
 @charset "utf-8";
+
+* {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Arial";
+  font-size: 12px;
+  color: #000000;
+}
+
+p {
+  font-family: "Arial";
+  font-size: 12px;
+  color: #000000;
+}
+
+img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+@media all {
+
+  #header {
+    position: relative;
+    width: 1000px;
+    height: 50px;
+    margin-left: -500px;
+    left: 50%;
+  }
+
+  .title {
+    position: fixed;
+    margin-top: 10px;
+    font-family: "Verdana";
+    font-size: 20px;
+    float: left;
+  }
+
+  .title>a {
+    color: #666666;
+  }
+
+  #main_menu {
+    position: fixed;
+    margin: 15px 0px 0px 120px;
+  }
+
+  #main_menu>ul>li {
+    float: left;
+    margin-left: 30px;
+  }
+
+  #main_menu>ul>li>a {
+    font-family: "Verdana";
+    font-size: 14px;
+    color: #333333;
+  }
+
+  #main_menu>ul>li>a:hover {
+    color: #0099ff;
+  }
+
+  #access_menu {
+    position: relative;
+    margin-top: 10px;
+    float: right;
+  }
+
+  #access_menu>ul>li {
+    float: left;
+  }
+
+  #access_menu>ul>li>button {
+    background: #0099ff;
+    border: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  #access_menu>ul>li>button:hover {
+    background: #009999;
+  }
+
+  #content {
+    position: relative;
+    background: #8888ff;
+    width: 100%;
+    min-height: 500px;
+  }
+
+  #footer {
+    position: relative;
+    width: 1000px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: -500px;
+    left: 50%;
+  }
+
+  #footer>span {
+    float: left;
+  }
+
+  #footer_menu {
+    float: left;
+    margin-left: 30px;
+  }
+
+  #footer_menu>ul>li>a {
+    color: #333333;
+  }
+
+  #footer_menu>ul>li>a:hover {
+    color: #0099ff;
+  }
+
+}
