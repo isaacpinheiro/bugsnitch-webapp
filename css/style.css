@@ -130,4 +130,58 @@ ul, li {
     color: #0099ff;
   }
 
+  .intro_text {
+    position: fixed;
+    color: #ffffff;
+    font-size: 40px;
+    margin-top: 20px;
+    width: 800px;
+    margin-left: -400px;
+    left: 50%;
+    text-align: center;
+  }
+
+  #signup_div {
+    position: fixed;
+    background: #eeeeee;
+    width: 400px;
+    height: 300px;
+    margin-top: 150px;
+    margin-left: -200px;
+    left: 50%;
+    border-radius: 10px;
+  }
+
+  .signup_form>ul {
+    margin-top: 30px;
+    margin-left: 45px;
+  }
+
+  .signup_form>ul>li {
+    margin-bottom: 10px;
+  }
+
+  .signup_form>ul>li>input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #0099ff;
+    border-radius: 20px;
+    padding-left: 10px;
+  }
+
+  .signup_form>ul>li>button {
+    background: #0099ff;
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .signup_form>ul>li>button:hover {
+    background: #009999;
+  }
+
 }
