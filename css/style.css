@@ -184,4 +184,8 @@ ul, li {
     background: #009999;
   }
 
+  .error_msg {
+    color: #ff0000;
+  }
+
 }

@@ -11,11 +11,9 @@ app.config(['$routeProvider', function($routeProvider){
     })
     .when('/sobre', {
       templateUrl: 'templates/sobre.html',
-      controller: 'SobreController'
     })
     .when('/equipe', {
       templateUrl: 'templates/equipe.html',
-      controller: 'EquipeController'
     })
     .when('/contato', {
       templateUrl: 'templates/contato.html',
@@ -23,7 +21,6 @@ app.config(['$routeProvider', function($routeProvider){
     })
     .when('/termos', {
       templateUrl: 'templates/termos.html',
-      controller: 'TermosController'
     })
     .otherwise({
       redirectTo: '/'
@@ -31,22 +28,49 @@ app.config(['$routeProvider', function($routeProvider){
 
 }]);
 
-app.controller('MainController', function(){
+app.controller('MainController', function($scope){
+
+  $scope.errMsg = '';
+  $scope.nome = '';
+  $scope.email = '';
+  $scope.senha = '';
+  $scope.confSenha = '';
+
+  $scope.Cadastrar = function(){
+
+    if($scope.nome == ''){
+
+      $scope.errMsg = 'Por favor, informe o seu nome.';
+
+    }else if($scope.email == ''){
+
+      $scope.errMsg = 'Por favor, informe o seu E-mail.';
+
+    }else if($scope.senha == ''){
+
+      $scope.errMsg = 'Por favor, informa a sua nova senha.';
+
+    }else if($scope.confSenha == ''){
+
+      $scope.errMsg = 'Por favor, confirme a sua nova senha.';
+
+    }else if($scope.confSenha != $scope.senha){
+
+      $scope.errMsg = 'A confirmação está diferente da senha.';
+
+    }else{
+
+      $scope.errMsg = '';
+      alert('Cadastrado');
+
+      // TODO
+
+    }
+
+  };
 
 });
 
-app.controller('SobreController', function(){
-
-});
-
-app.controller('EquipeController', function(){
-
-});
-
-app.controller('ContatoController', function(){
-
-});
-
-app.controller('TermosController', function(){
+app.controller('ContatoController', function($scope){
 
 });

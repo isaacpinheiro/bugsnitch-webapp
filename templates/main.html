@@ -3,11 +3,12 @@
   <div id="signup_div">
     <form class="signup_form">
       <ul>
-        <li><input type="text" placeholder="Nome" value="" /></li>
-        <li><input type="text" placeholder="E-mail" value="" /></li>
-        <li><input type="password" placeholder="Nova Senha" value="" /></li>
-        <li><input type="password" placeholder="Confirme a Senha" value="" /></li>
-        <li><button>Cadastrar</button></li>
+        <li><input type="text" placeholder="Nome" ng-model="nome" /></li>
+        <li><input type="text" placeholder="E-mail" ng-model="email" /></li>
+        <li><input type="password" placeholder="Nova Senha" ng-model="senha" /></li>
+        <li><input type="password" placeholder="Confirme a Senha" ng-model="confSenha" /></li>
+        <li><button ng-click="Cadastrar()">Cadastrar</button></li>
+        <p class="error_msg">{{ errMsg }}</p>
       </ul>
     </form>
   </div>
