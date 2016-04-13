@@ -213,4 +213,56 @@ ul, li {
     opacity: 0.6;
   }
 
+  #enviar_div {
+    position: fixed;
+    background: #eeeeee;
+    width: 720px;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: -360px;
+    left: 50%;
+    border-radius: 10px;
+  }
+
+  .enviar_form>ul {
+    margin-top: 30px;
+    margin-left: 45px;
+  }
+
+  .enviar_form>ul>li {
+    margin-bottom: 10px;
+  }
+
+  .enviar_form>ul>li>input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #0099ff;
+    border-radius: 20px;
+    padding-left: 10px;
+  }
+
+  .enviar_form>ul>li>textarea {
+    width: 615px;
+    height: 80px;
+    border: 1px solid #0099ff;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  .enviar_form>ul>li>button {
+    background: #0099ff;
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .enviar_form>ul>li>button:hover {
+    background: #009999;
+  }
+
 }
