@@ -22,11 +22,60 @@ app.config(['$routeProvider', function($routeProvider){
     .when('/termos', {
       templateUrl: 'templates/termos.html',
     })
+    .when('/signin', {
+      templateUrl: 'templates/signin.html',
+      controller: 'SignInController'
+    })
     .otherwise({
       redirectTo: '/'
     });
 
 }]);
+
+app.controller('AccessController', function($scope, $window){
+
+  $scope.logged = false;
+
+  $scope.SignIn = function(){
+    $window.location.href = '#/signin';
+  };
+
+});
+
+app.controller('SignInController', function($scope){
+
+  $scope.errMsg = '';
+  $scope.email = '';
+  $scope.senha = '';
+
+  $scope.Entrar = function(){
+
+    var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
+    if($scope.email == ''){
+
+      $scope.errMsg = 'Por favor, informe o seu E-mail.';
+
+    }else if(!filter.test($scope.email)){
+
+      $scope.errMsg = 'Por favor, informe um E-mail válido';
+
+    }else if($scope.senha == ''){
+
+      $scope.errMsg = 'Por favor, informa a sua senha.';
+
+    }else {
+
+      $scope.errMsg = '';
+      alert('Entrar');
+
+      // TODO
+
+    }
+
+  };
+
+});
 
 app.controller('MainController', function($scope){
 
