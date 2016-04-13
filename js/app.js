@@ -38,6 +38,8 @@ app.controller('MainController', function($scope){
 
   $scope.Cadastrar = function(){
 
+    var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
     if($scope.nome == ''){
 
       $scope.errMsg = 'Por favor, informe o seu nome.';
@@ -45,6 +47,10 @@ app.controller('MainController', function($scope){
     }else if($scope.email == ''){
 
       $scope.errMsg = 'Por favor, informe o seu E-mail.';
+
+    }else if(!filter.test($scope.email)){
+
+      $scope.errMsg = 'Por favor, informe um E-mail válido';
 
     }else if($scope.senha == ''){
 
@@ -72,5 +78,46 @@ app.controller('MainController', function($scope){
 });
 
 app.controller('ContatoController', function($scope){
+
+  $scope.errMsg = '';
+  $scope.nome = '';
+  $scope.telefone = '';
+  $scope.email = '';
+  $scope.mensagem = '';
+
+  $scope.Enviar = function(){
+
+    var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
+    if($scope.nome == ''){
+
+      $scope.errMsg = 'Por favor, informe o seu nome.';
+
+    }else if($scope.telefone == ''){
+
+      $scope.errMsg = 'Por favor, informe o seu telefone.';
+
+    }else if($scope.email == ''){
+
+      $scope.errMsg = 'Por favor, informe o seu E-mail.';
+
+    }else if(!filter.test($scope.email)){
+
+      $scope.errMsg = 'Por favor, informe um E-mail válido';
+
+    }else if($scope.mensagem == ''){
+
+      $scope.errMsg = 'Por favor, informa a sua mensagem.';
+
+    }else{
+
+      $scope.errMsg = '';
+      alert('Enviar');
+
+      // TODO
+
+    }
+
+  };
 
 });
