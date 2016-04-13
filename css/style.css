@@ -265,4 +265,34 @@ ul, li {
     background: #009999;
   }
 
+  #equipe_img_div {
+    position: fixed;
+    width: 600px;
+    margin-top:100px;
+    margin-left: -300px;
+    left: 50%;
+  }
+
+  #equipe_img_div>table>tr {
+    margin-bottom: 40px;
+  }
+
+  #equipe_img_div>table>tr>td {
+    margin-right: 10px;
+  }
+
+  .equipe_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+  }
+
+  .equipe_nome {
+    color: #ffffff;
+  }
+
+  .equipe_cargo {
+    color: #333333;
+  }
+
 }
