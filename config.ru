@@ -1,5 +1,3 @@
-$stdout.sync = true
-
 use Rack::Static,
 	:urls => ["/css", "/bower_components", "/js", "/templates", "/img"],
 	:root => "public"
