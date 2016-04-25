@@ -26,6 +26,10 @@ app.config(['$routeProvider', function($routeProvider){
       templateUrl: 'templates/signin.html',
       controller: 'SignInController'
     })
+    .when('/dashboard', {
+      templateUrl: 'templates/dashboard.html',
+      controller: 'DashboardController'
+    })
     .otherwise({
       redirectTo: '/'
     });
@@ -77,7 +81,7 @@ app.controller('SignInController', function($scope){
 
 });
 
-app.controller('MainController', function($scope){
+app.controller('MainController', function($scope, $window, $http, usuarioService){
 
   $scope.errMsg = '';
   $scope.nome = '';
@@ -116,9 +120,24 @@ app.controller('MainController', function($scope){
     }else{
 
       $scope.errMsg = '';
-      alert('Cadastrado');
 
-      // TODO
+      $scope.usuario = {
+        id: null,
+        nome: $scope.nome,
+        email: $scope.email,
+        senha: $scope.senha
+      };
+
+      $http.defaults.useXDomain = true;
+
+      usuarioService.save($scope.usuario).$promise.then(
+        function(){
+          $window.location.href = '#/dashboard';
+        },
+        function(){
+          $scope.errMsg = 'Error!';
+        }
+      );
 
     }
 
@@ -169,4 +188,12 @@ app.controller('ContatoController', function($scope){
 
   };
 
+});
+
+app.factory('usuarioService', function($resource){
+  return $resource('http://localhost:8080/bugsnitch/service/usuario/:id');
+});
+
+app.factory('usuarioProjetoService', function($resource){
+  return $resource('http://localhost:8080/bugsnitch/service/usuarioprojeto/:id');
 });
